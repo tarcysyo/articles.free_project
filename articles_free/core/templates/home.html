@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% block start %}
+	<!----start-container----->
+	<div class="head-bg sTop">
+		<div class="container">
+			<div class="col-lg-12 header-note">
+				<a href="#"><img src="{% static 'images/logo.png' %}" title="Articles.Free" /></a>
+				<h1>Articles.Free</h1>
+				<p>Nesta plataforma você terá acesso a artigos científicos sobre diversos assuntos.<br>
+				Basta fazer um cadastro rápido e todo o conteúdo do site estará disponível.<br>E mais, se
+				você quiser pode publicar o seu artigo também. <br><strong>Compartilhe conhecimento!</strong></p>
+				<a class="btn btn-primary big-btn" href="#">Publicar<span> </span></a>
+			</div>
+		</div>
+	</div>
+	<!----//End-container----->
+{% endblock %}
+{% block nav %}
+	<!----start-top-nav---->
+	<nav class="subMenu navbar-custom navbar-scroll-top" role="navigation">
+{% endblock %}
+{% block content %}
+	<!---- start-top-grids---->
+	<section class="container page-home">
+		<div class="row section s1 top-grids">
+		<h4 class="home-h4">Artigos</h4>
+		<p class="contact-head">Os artigos abaixo podem ser lidos mesmo que você não tenha cadastro
+		no site. Aprecie!</p>
+			<div class="col-md-3 top-grid">
+				<h2>Responsive Design</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="col-md-3 top-grid">
+				<h2>Web Development</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="col-md-3 top-grid">
+				<h2>Internet Marketing</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="col-md-3 top-grid">
+				<h2>IOS Development</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="col-md-3 top-grid">
+				<h2>Responsive Design</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="col-md-3 top-grid">
+				<h2>Web Development</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="col-md-3 top-grid">
+				<h2>Internet Marketing</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="col-md-3 top-grid">
+				<h2>IOS Development</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				<footer class="publ-date">Publicado em 20/04/2020</footer>
+				<button class="btn btn-ler" type="submit">Ler</button>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</section>
+	<!---- //End-top-grids---->
+{% endblock %}
+{% block contact%}
+	<!----start-contact---->
+	<div class="contact section s4">
+		<div class="container">
+			<h4>Contato</h4>
+			<p class="contact-head">Elogios, dúvidas ou sugestões?<br>Envie-nos uma mensagem. </p>
+			<div class="row contact-form">
+				<form>
+					<div class="col-md-6 text-box">
+						<input type="text" placeholder="Nome" />
+						<input type="text" placeholder="Email" />
+						<input type="text" placeholder="Assunto" />
+					</div>
+					<div class="col-md-6 textarea">
+						<textarea>Mensagem</textarea>
+					</div>
+					<div class="clearfix"> </div><br />
+					<input class="btn btn-primary btn-red-lg" type="submit" value="Enviar" />
+				</form>
+			</div>
+		</div>
+	</div>
+	<!----//End-contact---->
+{% endblock %}

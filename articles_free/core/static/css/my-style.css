@@ -1,0 +1,132 @@
+/*flat*/
+.home-h4{
+	color: #666;
+	font-size: 2.5em;
+	font-weight: 300;
+	text-align:center;
+}
+.btn-ler{
+	float: left;
+	color: #ffffff;
+  	background-color: #111111;
+  	border-color: #357ebd;
+}
+.publ-date{
+	font-size: 10px;
+	font-style: italic;
+	padding: 1px;
+	text-align: right;
+}
+
+.subMenu-custom {
+	position: absolute;
+	top: 300px;
+	z-index: 1000;
+	width: 100%;
+}
+
+.head-bg-custom{
+	background:url(../images/bg_fit.png) no-repeat 0px 0px;
+	min-height:534px;
+}
+
+.header-note-custom{
+	text-align:center;
+}
+.header-note-custom{
+	color:#FFF;
+	font-weight:100;
+	padding-top: 6.5em;
+}
+
+.header-note-custom h1{
+	font-weight: 200;
+	font-size: 2.8em;
+	margin: 1em;
+}
+/*end flat*/
+/*zsarah*/
+/*--blog--*/
+.main {
+	padding: 4em 0em;
+}
+.blog_grid {
+	margin-bottom: 3em;
+}
+.blog_grid p {
+	font-size:14px;
+	line-height: 1.6em;
+	color: #999;
+	padding-top: 20px;
+}
+
+span.icon_text {
+	vertical-align: middle;
+	font-size:13px;
+}
+.blog_grid li i {
+	width:20px;
+	height:20px;
+	display:inline-block;
+	background:url("../images/img-sprite.png") no-repeat;
+	vertical-align:middle;
+	margin-right:5px;
+}
+.rsidebar.span_1_of_3.services_list ul {
+	padding: 0;
+}
+.blog_grid li i.date {
+	background-position:-179px -71px;
+}
+.blog_grid li i.admin {
+	background-position:-216px -71px;
+}
+.blog_grid li i.permalink {
+	background-position:-42px -114px;
+}
+.blog_grid li i.title-icon {
+	background-position:-5px -113px;
+}
+.blog_grid li i.tags {
+	background-position:-82px -114px;
+}
+.blog_grid li i.comments {
+	background-position:-259px -73px;
+}
+.blog_grid li i.views {
+	background-position:-156px -116px;
+}
+.blog_grid li i.likes {
+	background-position:-121px -115px;
+}
+.desc p a{
+	text-decoration:underline;
+}
+.desc p a:hover{
+  color:#FFF;
+  text-decoration:none;
+}
+.archive-list{
+	margin-top:30px;
+}
+.services_list li a {
+	display: block;
+	font-size: 14px;
+	color: #6c6f72;
+	line-height: 40px;
+	padding-left: 25px;
+	background: url("../images/list-img.png") no-repeat center left;
+	border-top: 1px solid rgba(120, 124, 127, 0.4);
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.services_list li a:hover{
+	color:#d42819
+}
+.services_list li {
+	list-style-type: none;
+}
+/*end zsarah*/

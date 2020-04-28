@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+{%load static %}
+	<head>
+		<title>Articles.Free | Home</title>
+		<meta charset="utf-8">
+		<meta lang="pt-br">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/ico.png' %}"/>
+		<link href="{% static 'css/my-style.css' %}" rel='stylesheet'  type='text/css'/>
+		<!--flat-->
+		<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+		<link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' type='text/css' />
+		<link href="{% static 'css/theme-style.css' %}" rel='stylesheet' type='text/css' />
+		<!--end flat-->
+		<!--szarah-->
+		<link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'css/component.css' %}">
+		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+		<!--end szarah-->
+		<!--bright-->
+		<!--<link href="css/bootstrap-bright.css" rel="stylesheet" type="text/css" media="all">-->
+		<link href="{% static 'css/style-bright.css' %}" rel="stylesheet" type="text/css" media="all">
+		<!--end bright-->
+	</head>
+	<body>
+{% block start %}
+{% endblock %}
+{% block nav %}
+{% endblock %}
+<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+					<img src="images/nav-icon.png" title="drop-down-menu" />
+				</button>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-left navbar-main-collapse">
+				<ul class="nav navbar-nav">
+					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li class="active">
+						<a id="sTop" class="subNavBtn" href="{ url 'core:home'}">Home</a>
+					</li>
+					<li class="page-scroll">
+						<a id="s2" class="subNavBtn" href="{ url 'articles:index'}">Artigos</a>
+					</li>
+					<li class="page-scroll">
+						<a id="s3" class="subNavBtn" href="#">Entrar</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+				<a  id="s4" class="right-msg subNavBtn msg-icon"href="#"><span> </span></a>
+				<div class="clearfix"> </div>
+		</div>
+		<!-- /.container -->
+	</nav>
+	<!----//End-top-nav---->
+{% block content %}
+{% endblock %}
+{% block contact %}
+{% endblock %}
+		<!----start-copy-rigth---->
+		<div class="contact section s4">
+				<!----start-copy-right---->
+				<div class="copy-right">
+					<p>Copyright &#169; 2020 <span>-->Articles.Free<--</span> Todos os direitos reservados.</p>
+				</div>
+				<!----//End-copy-right---->
+			</div>
+		</div>
+		<!----//End-copy-right---->
+	</body>
+</html>
