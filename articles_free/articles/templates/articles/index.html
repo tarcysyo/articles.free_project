@@ -20,54 +20,36 @@
         <div id="main-content" class="wrap-container zerogrid row section s1 top-grids">
             <h4 class="home-h4">Artigos</h4>
             <p class="contact-head">Bem vindo ao <strong>Articles.Free</strong>.<br>Fique à vontade para ler ou publicar!</p>
+{% for article in articles %}
             <article>
                 <div class="col-1-2 left">
-                    <a class="art-category left" href="#">Design</a>
+                    <a class="art-category left" href="#">{{ article.category }}</a>
                     <div class="clear"></div>
                     <div class="art-content">
-                        <h2>the title on the article</h2>
-                        <div class="info">By Admin on March 01, 2015 with <a href="#">01 Commnets</a></div>
+                        <h2>{{ article }}</h2>
+                        <div class="info">By {{ article.author }} on {{ article.publication_date }}, with <a href="#">01 Commnets</a></div>
                         <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                        <p>{{ article.abstract }}</p>
                         <a href="#" class="more">Ler mais</a>
                     </div>
                 </div>
                 <div class="col-1-2">
-                    <a class="art-category right" href="#">Studio</a>
+                    <a class="art-category right" href="#">{{ article.category }}</a>
                     <div class="clear"></div>
                     <div class="art-content">
-                        <h2>the title on the article</h2>
-                        <div class="info">By Admin on March 01, 2015 with <a href="#">01 Commnets</a></div>
+                        <h2>{{ article.title }}</h2>
+                        <div class="info">By {{ article.author }} on {{ article.publication_date }}, with <a href="#">01 Commnets</a></div>
                         <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
+                        <p>{{ article.abstract }}</p>
                         <a href="#" class="more">Ler mais</a>
                     </div>
                 </div>
             </article>
+{% empty %}
             <article>
-                <div class="col-1-2 left">
-                    <a class="art-category left" href="#">Gallery</a>
-                    <div class="clear"></div>
-                    <div class="art-content">
-                        <h2>the title on the article</h2>
-                        <div class="info">By Admin on March 01, 2015 with <a href="#">01 Commnets</a></div>
-                        <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
-                        <a href="#" class="more">Ler mais</a>
-                    </div>
-                </div>
-                <div class="col-1-2">
-                    <a class="art-category right" href="#">Portfolio</a>
-                    <div class="clear"></div>
-                    <div class="art-content">
-                        <h2>the title on the article</h2>
-                        <div class="info">By Admin on March 01, 2015 with <a href="#">01 Commnets</a></div>
-                        <div class="line"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus.</p>
-                        <a href="#" class="more">Ler mais</a>
-                    </div>
-                </div>
+                <p>Ops!!! Nenhum artigo disponível.</p>
             </article>
+{% endfor %}
         </div>
         <div id="pagination" class="clearfix">
             <ul>

@@ -1,7 +1,16 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
+from articles_free.articles.models import Article
 
 # Create your views here.
+
 def index(request):
+    articles = Article.objects.all()
     template_name = 'articles/index.html'
-    return render(request, template_name)
+    context = {'articles': articles}
+    return render(request, template_name, context)
+
+def details(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    template_name = 'articles/details.html'
+    context = {'article': article}
+    return render(request, template_name, context)

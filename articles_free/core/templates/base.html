@@ -39,10 +39,10 @@
 				<ul class="nav navbar-nav">
 					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 					<li class="active">
-						<a id="sTop" class="subNavBtn" href="{ url 'core:home'}">Home</a>
+						<a id="sTop" class="subNavBtn" href="{% url 'core:home' %}">Home</a>
 					</li>
 					<li class="page-scroll">
-						<a id="s2" class="subNavBtn" href="{ url 'articles:index'}">Artigos</a>
+						<a id="s2" class="subNavBtn" href="{% url 'articles:index' %}">Artigos</a>
 					</li>
 					<li class="page-scroll">
 						<a id="s3" class="subNavBtn" href="#">Entrar</a>
