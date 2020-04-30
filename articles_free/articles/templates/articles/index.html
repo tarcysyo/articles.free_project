@@ -10,14 +10,16 @@
 {% block content %}					
 <div>
 	<h1 class="title">Artigos</h1>
+{% for articles in articles %}
 	<section>
-		<h2 class="title">Título do Artigo Título do Artigo Título do Artigo Título do Artigo Título do Artigo</h2>
-		<footer class="categ">Categoria</footer>
+		<h2 class="title">{{ articles }}</h2>
+		<footer class="categ">{{ articles.category }}</footer>
 		<hr class="title">
-		<p>We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team, arbitrary. We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team.</p><p>We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team, arbitrary. We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team.</p>
+		<p>{{ articles.abstract }}</p>
 		<a href="#" class="btn but">Ler</a>
-		<footer class="title">Publicado por <em>XXXXXXXXXXXXXXXXXX</em>, em 20/04/2020</footer>
+		<footer class="title">Publicado por <em>{{ articles.author }}</em>, em {{ articles.publication_date }}</footer>
 		<hr>
 	</section>
+{% endfor %}
 </div>
 {% endblock %}

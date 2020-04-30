@@ -11,11 +11,11 @@
 	<div>
 		<h1 class="title">Leitura</h1>
 		<section>
-			<h2 class="title">Título do Artigo Título do Artigo Título do Artigo Título do Artigo Título do Artigo</h2>
-			<footer class="categ"><strong>Categoria</strong></footer>
+			<h2 class="title">{{ article }}</h2>
+			<footer class="categ"><strong>{{ article.category }}</strong></footer>
 			<hr class="title">
-			<footer class="detail">Publicado por <em>XXXXXXXXXXXXXXXXX</em>, em 20/04/2020</footer>
-			<iframe src= "{% static 'files/pdf2.pdf' %}" type='application/pdf'></iframe>
+			<footer class="detail">Publicado por <em>{{ article.author }}</em>, em {{ article.publication_date}}</footer>
+			<iframe src= "{{ article.content.url }}" type='application/pdf'></iframe>
 		</section>
 	</div>
 {% endblock %}
