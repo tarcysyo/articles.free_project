@@ -1,63 +1,23 @@
-{% extends "base.html"%}
-{% block start %}
-<!----start-container----->
-		<div class="head-bg-custom sTop">
-			<div class="container">
-				<div class="col-lg-12 header-note-custom">
-					<h1>Articles.Free</h1>
-					<a class="btn btn-primary big-btn" href="#">Publicar<span> </span></a>
-				</div>
-			</div>
+{% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}
+	<div class="breadcrumb">
+		<div>
+			<a href="#">Artigos</a><span>/</span>
 		</div>
-		<!----//End-container----->
+	</div>
 {% endblock %}
-{% block nav %}
-    <!----start-top-nav---->
-    <nav class="subMenu-custom navbar-custom navbar-scroll-top" role="navigation">
-{% endblock %}
-{% block content %}
-    <section class="container page-home">
-        <div id="main-content" class="wrap-container zerogrid row section s1 top-grids">
-            <h4 class="home-h4">Artigos</h4>
-            <p class="contact-head">Bem vindo ao <strong>Articles.Free</strong>.<br>Fique à vontade para ler ou publicar!</p>
-{% for article in articles %}
-            <article>
-                <div class="col-1-2 left">
-                    <a class="art-category left" href="#">{{ article.category }}</a>
-                    <div class="clear"></div>
-                    <div class="art-content">
-                        <h2>{{ article }}</h2>
-                        <div class="info">By {{ article.author }} on {{ article.publication_date }}, with <a href="#">01 Commnets</a></div>
-                        <div class="line"></div>
-                        <p>{{ article.abstract }}</p>
-                        <a href="#" class="more">Ler mais</a>
-                    </div>
-                </div>
-                <div class="col-1-2">
-                    <a class="art-category right" href="#">{{ article.category }}</a>
-                    <div class="clear"></div>
-                    <div class="art-content">
-                        <h2>{{ article.title }}</h2>
-                        <div class="info">By {{ article.author }} on {{ article.publication_date }}, with <a href="#">01 Commnets</a></div>
-                        <div class="line"></div>
-                        <p>{{ article.abstract }}</p>
-                        <a href="#" class="more">Ler mais</a>
-                    </div>
-                </div>
-            </article>
-{% empty %}
-            <article>
-                <p>Ops!!! Nenhum artigo disponível.</p>
-            </article>
-{% endfor %}
-        </div>
-        <div id="pagination" class="clearfix">
-            <ul>
-                <li><a class="current" href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">próxima</a></li>
-            </ul>
-        </div>
-    </section>
+{% block content %}					
+<div>
+	<h1 class="title">Artigos</h1>
+	<section>
+		<h2 class="title">Título do Artigo Título do Artigo Título do Artigo Título do Artigo Título do Artigo</h2>
+		<footer class="categ">Categoria</footer>
+		<hr class="title">
+		<p>We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team, arbitrary. We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team.</p><p>We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team, arbitrary. We are proud of our company, not only for its unqiue identity, but because of the people that drive it! Listed here are the most seasoned members of the AmazingBiz team.</p>
+		<a href="#" class="btn but">Ler</a>
+		<footer class="title">Publicado por <em>XXXXXXXXXXXXXXXXXX</em>, em 20/04/2020</footer>
+		<hr>
+	</section>
+</div>
 {% endblock %}

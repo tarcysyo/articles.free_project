@@ -9,8 +9,8 @@ def index(request):
     context = {'articles': articles}
     return render(request, template_name, context)
 
-def details(request, pk):
+def detail(request, pk):
     article = get_object_or_404(Article, pk=pk)
-    template_name = 'articles/details.html'
+    template_name = 'articles/detail.html'
     context = {'article': article}
     return render(request, template_name, context)

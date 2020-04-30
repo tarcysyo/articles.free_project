@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}
+	<div class="breadcrumb">
+		<div>
+			<a href="#">Artigo</a><span>/</span>Leitura
+		</div>
+	</div>
+{% endblock %}
+{% block content %}					
+	<div>
+		<h1 class="title">Leitura</h1>
+		<section>
+			<h2 class="title">Título do Artigo Título do Artigo Título do Artigo Título do Artigo Título do Artigo</h2>
+			<footer class="categ"><strong>Categoria</strong></footer>
+			<hr class="title">
+			<footer class="detail">Publicado por <em>XXXXXXXXXXXXXXXXX</em>, em 20/04/2020</footer>
+			<iframe src= "{% static 'files/pdf2.pdf' %}" type='application/pdf'></iframe>
+		</section>
+	</div>
+{% endblock %}
+				

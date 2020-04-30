@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}
+	<div class="breadcrumb">
+		<div>
+			<a href="#">Contato</a><span>/</span>
+		</div>
+	</div>
+{% endblock %}
+{% block content %}					
+	<div class="container">
+		<h1 class="title">Contato</h1>
+		<section>
+			<div class="container">
+	    	<h2 class="title">Fale conosco</h2>
+	        <div>                           	
+	            <div>
+	                <form action="#">
+	                	<fieldset>
+	                		<input type="text" name="name" value="" placeholder="Nome*" />
+	                        <input type="email" name="email" value="" placeholder="E-mail*" />
+	                        <input  type="text" name="subject" value="" placeholder="Assunto" />
+	                        <textarea name="message" placeholder="Mensagem"></textarea>
+	                        <div class="clear"></div>
+	                        <input type="reset" class="btn but fleft" value="Limpar" />
+	                        <input type="submit" class="btn but fright" value="Enviar" />
+	                        <div class="clear"></div>
+	                	</fieldset>                                        
+	                </form>
+	            </div>
+	        </div>
+	    </div>
+		</section>
+	</div>
+{% endblock %}
+				

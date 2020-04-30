@@ -25,5 +25,5 @@ urlpatterns = [
     re_path(r'^', include(('articles_free.core.urls', 'core'), 'core')),
     re_path(r'^artigos/', include(('articles_free.articles.urls', 'articles'), 'articles')),
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
