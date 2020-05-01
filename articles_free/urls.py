@@ -23,6 +23,7 @@ admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^', include(('articles_free.core.urls', 'core'), 'core')),
+    re_path(r'^contato/', include(('articles_free.core.urls', 'core'), 'contact')),
     re_path(r'^artigos/', include(('articles_free.articles.urls', 'articles'), 'articles')),
 ]
 if settings.DEBUG:

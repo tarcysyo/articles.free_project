@@ -21,7 +21,7 @@
 				<div>				
 					<div>
 						<div class="fleft logo">
-							<a href="index.html">
+							<a href="{% url 'core:home' %}">
 								<img src="{% static 'images/logo.png' %}" alt="Articles.Free" />
 							</a>
 						</div>
@@ -29,11 +29,11 @@
 							<nav id="main_menu">
 								<div class="menu_wrap">
 									<ul class="nav sf-menu">
-										<li class="first"><a href="#">Home</a></li>
-										<li class="sub-menu first"><a href="#">Artigos</a></li>
+										<li class="first"><a href="{% url 'core:home' %}">Home</a></li>
+										<li class="sub-menu first"><a href="{% url 'articles:index' %}">Artigos</a></li>
 										<li class="sub-menu first"><a href="#">Dashboard</a></li>
 										<li class="sub-menu last"><a href="#">Entrar</a></li>
-										<li class="last"><a href="#">Contato</a></li>
+										<li class="last"><a href="{% url 'core:contact' %}">Contato</a></li>
 									</ul>
 								</div>
 							</nav>
@@ -58,7 +58,7 @@
 				<div class="container">
 					<div>
 						<div class="fleft copyright">Articles.Free &copy; 2020 | Todos os direitos reservados</div>
-						<div class="fright"><a href="#"><img src="{% static 'images/ico.png'%}"></a></div>
+						<div class="fright"><a href="{% url 'core:home' %}"><img src="{% static 'images/ico.png'%}"></a></div>
 						<div class="clear"></div>
 					</div>
 				</div>
