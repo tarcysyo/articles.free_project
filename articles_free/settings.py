@@ -122,3 +122,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'articles_free','media')
 MEDIA_URL = '/media/'
+
+
+# E-mail
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'articles_free@gmail.com'
+CONTACT_EMAIL = 'contato@articles_free.com.br'

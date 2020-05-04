@@ -30,7 +30,6 @@ footer.categ {
 }
 
 h1.title {
-	text-align: center;
 	position:relative;
 	/*text-transform:uppercase;*/
 	line-height:31px;
@@ -65,18 +64,17 @@ fieldset textarea {
 	display: grid;
 	margin: 10px;
 	width: 97.8%;
+	height: 100px;
 }
 
 h1.home {
 	padding-top: 20px;
-	text-align: center;
 	font-family: "DauphinPlain";
 	font-size: 70px;
 }
 
 h2.home {
 	padding-top: 20px;
-	text-align: center;
 }
 
 span.home {

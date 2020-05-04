@@ -9,21 +9,23 @@
 {% endblock %}
 {% block content %}					
 	<div class="container">
-		<h1 class="title">Contato</h1>
+		<h1 class="title text-center">Contato</h1>
 		<section>
 			<div class="container">
 	    	<h2 class="title">Fale conosco</h2>
+				{% if is_valid %}
+				<p class="text-center">Sua mensagem foi enviada com sucesso!</p>
+				{% endif %}
 	        <div>                           	
 	            <div>
-	                <form action="#">
+	                <form method="post">
+					{% csrf_token %}
 	                	<fieldset>
-	                		<input type="text" name="name" value="" placeholder="Nome*" />
-	                        <input type="email" name="email" value="" placeholder="E-mail*" />
-	                        <input  type="text" name="subject" value="" placeholder="Assunto" />
-	                        <textarea name="message" placeholder="Mensagem"></textarea>
+							{% for field in form %}
+								{{ field }}
+							{% endfor %}
 	                        <div class="clear"></div>
-	                        <input type="reset" class="btn but fleft" value="Limpar" />
-	                        <input type="submit" class="btn but fright" value="Enviar" />
+	                        <button type="submit" class="btn but">Enviar</button>
 	                        <div class="clear"></div>
 	                	</fieldset>                                        
 	                </form>
