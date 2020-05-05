@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'articles_free.core',
     'articles_free.articles',
+    'articles_free.accounts',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,8 @@ MEDIA_URL = '/media/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'articles_free@gmail.com'
 CONTACT_EMAIL = 'contato@articles_free.com.br'
+
+# Authentication
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'core:home'
+LOGOUT_URL = 'accounts:logout'

@@ -32,7 +32,11 @@
 										<li class="first"><a href="{% url 'core:home' %}">Home</a></li>
 										<li class="sub-menu first"><a href="{% url 'articles:index' %}">Artigos</a></li>
 										<li class="sub-menu first"><a href="#">Dashboard</a></li>
-										<li class="sub-menu last"><a href="#">Entrar</a></li>
+										{% if user.is_authenticated %}
+										<li class="sub-menu last"><a href="{% url 'accounts:logout' %}">Sair</a></li>
+										{% else %}
+										<li class="sub-menu last"><a href="{% url 'accounts:login' %}">Entrar</a></li>
+										{% endif%}
 										<li class="last"><a href="{% url 'core:contact' %}">Contato</a></li>
 									</ul>
 								</div>

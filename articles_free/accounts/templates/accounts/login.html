@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}
+	<div class="breadcrumb">
+		<div>
+			<a href="{% url 'core:home' %}">Home</a><span>/</span><a href="#">Entrar</a>
+		</div>
+	</div>
+{% endblock %}
+{% block content %}
+    <div class="container">
+						<h1 class="title text-center">Entrar</h1>
+						<section>
+							<div class="container">
+                        	<h2 class="title">Informe seus dados de login</h2>
+                            <div>
+                                <div>
+                                    <form method="post">
+					                {% csrf_token %}
+                                    	<fieldset class="login">
+                                    		<input type="text" name="username" value="" placeholder="Username*" required="True"/>
+	                                        <input type="password" name="password" value="" placeholder="Senha*" required="True"/>
+					                        <button type="submit" class="btn but fright">Enviar</button>
+                                    	</fieldset>
+                                        <div class="clear"></div>
+                                        <p>Esqueceu a senha? <a href="#">Criar nova senha</a></p>
+                                        <p>Não tem conta? <a href="#">Cadastre-se</a></p>
+                                        <div class="clear"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+						</section>
+					</div>
+{% endblock %}
