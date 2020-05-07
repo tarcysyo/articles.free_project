@@ -114,3 +114,45 @@ fieldset.login {
 .login button {
 	margin: 10px;
 }
+
+fieldset.register {
+	display: block;
+	padding: 10px;
+	border: 5px solid black;
+	margin-right: 150px;
+	margin-left: 150px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+.register input {
+	margin: 5px;
+	width: 20%;
+}
+
+#id_username {
+	width: 44%;
+}
+
+#id_password1 {
+	width: 25%;
+}
+
+#id_password2 {
+	width: 25%;
+}
+
+#id_name {
+	width: 30%;
+}
+
+#id_surname {
+	width: 66%;
+}
+
+#id_email {
+	width: 78%;
+}
+
+.register button {
+	margin: 10px;
+}

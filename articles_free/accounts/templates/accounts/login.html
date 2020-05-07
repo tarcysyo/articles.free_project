@@ -18,13 +18,15 @@
                                     <form method="post">
 					                {% csrf_token %}
                                     	<fieldset class="login">
+										{{ form.non_field_errors }}
                                     		<input type="text" name="username" value="" placeholder="Username*" required="True"/>
-	                                        <input type="password" name="password" value="" placeholder="Senha*" required="True"/>
-					                        <button type="submit" class="btn but fright">Enviar</button>
-                                    	</fieldset>
+											<input type="password" name="password" value="" placeholder="Senha*" required="True"/>
+											<button type="submit" class="btn but fright">Entrar</button>
+                                    	{{ field.errors }}
+										</fieldset>
                                         <div class="clear"></div>
                                         <p>Esqueceu a senha? <a href="#">Criar nova senha</a></p>
-                                        <p>Não tem conta? <a href="#">Cadastre-se</a></p>
+                                        <p>Não tem conta? <a href="{% url 'accounts:register' %}">Cadastre-se</a></p>
                                         <div class="clear"></div>
                                     </form>
                                 </div>
