@@ -17,7 +17,7 @@
 		<hr class="title">
 		<p>{{ articles.abstract }}</p>
 		<a href="{{ articles.get_absolute_url }}" class="btn but">Ler</a>
-		<footer class="title">Publicado por <em>{{ articles.author }}</em>, em {{ articles.publication_date }}</footer>
+		<footer class="title">Publicado por <em>{{ articles.author.first_name }} {{ articles.author.last_name }}</em>, em {{ articles.publication_date }}</footer>
 		<hr>
 	</section>
 {% endfor %}

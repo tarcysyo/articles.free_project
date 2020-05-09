@@ -14,7 +14,7 @@
 			<h2 class="title">{{ article }}</h2>
 			<footer class="categ"><strong>{{ article.category }}</strong></footer>
 			<hr class="title">
-			<footer class="detail">Publicado por <em>{{ article.author }}</em>, em {{ article.publication_date}}</footer>
+			<footer class="detail">Publicado por <em>{{ article.author.first_name }} {{ article.author.last_name }}</em>, em {{ article.publication_date}}</footer>
 			<iframe src= "{{ article.content.url }}" type='application/pdf'></iframe>
 		</section>
 	</div>
