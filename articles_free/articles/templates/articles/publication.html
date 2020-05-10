@@ -3,13 +3,13 @@
 {% block breadcrumb %}
 	<div class="breadcrumb">
         <div>
-            <a href="#">Home</a><span>/</span><a href="#">Dashboard</a><span>/</span><a>Publicar</a><span>/</span>
+            <a href="#">Home</a><span>/</span><a href="#">Dashboard</a><span>/</span><a>Publicar</a>
         </div>
     </div>
 {% endblock %}
 {% block content %}
     <div class="container">
-        <h1 class="title">Publicar</h1>
+        <h1 class="title text-center">Publicar</h1>
         <section>
             <div class="container">
             <h2 class="title">Dados do artigo</h2>
@@ -17,13 +17,13 @@
                 <div>
                     <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <fieldset class="register">
+                        <fieldset class="publication">
                             {{ form.non_field_errors }}
                             {% for field in form %}
                             {{ field }}
                             {{ field.errors }}
                             {% endfor %}
-                            <button type="submit" class="btn but fright">Cadastrar</button>
+                            <button type="submit" class="btn but fright">Publicar</button>
                         </fieldset>
                     </form>
                 </div>

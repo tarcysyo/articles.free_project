@@ -141,11 +141,11 @@ fieldset.register {
 	width: 25%;
 }
 
-#id_name {
+#id_first_name {
 	width: 30%;
 }
 
-#id_surname {
+#id_last_name {
 	width: 66%;
 }
 
@@ -155,4 +155,15 @@ fieldset.register {
 
 .register button {
 	margin: 10px;
+}
+
+#id_category {
+    width: 40%;
+}
+
+#id_title {
+    width: 61%;
+}
+#id_category {
+    width: 35%;
 }

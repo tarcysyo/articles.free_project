@@ -4,7 +4,6 @@ from django.urls import reverse
 
 # Create your models here.
 
-
 class Category(models.Model):
     name = models.CharField('Nome', max_length=100, blank=False, null=False)
 
@@ -15,6 +14,11 @@ class Category(models.Model):
         verbose_name = 'Categoria'
         verbose_name_plural = 'Categorias'
         ordering = ['name']
+
+
+class ArticleManager(models.Manager):
+    def dashboard(self, query):
+        return self.get_queryset().filter(author=query)
 
 
 class Article(models.Model):
@@ -36,3 +40,5 @@ class Article(models.Model):
         verbose_name = 'Artigo'
         verbose_name_plural = 'Artigos'
         ordering = ['publication_date']
+
+    object = ArticleManager()

@@ -132,6 +132,7 @@ DEFAULT_FROM_EMAIL = 'articles_free@gmail.com'
 CONTACT_EMAIL = 'contato@articles_free.com.br'
 
 # Authentication
+
 LOGIN_URL = 'accounts:login'
-LOGIN_REDIRECT_URL = 'core:home'
+LOGIN_REDIRECT_URL = 'accounts:dashboard'
 LOGOUT_URL = 'accounts:logout'
