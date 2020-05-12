@@ -314,7 +314,7 @@ img {
 	display:block;
 	margin:24px 10px 27px;
 	padding: 0;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 	font-size:14px;
 	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -419,7 +419,7 @@ h2.title a {
 	color:#000000;
 	font-family: 'Muli', sans-serif;
 	font-weight:400;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 }
 h2.title a:hover {
 	color: #000000;
@@ -526,7 +526,7 @@ ul, .follow_us ul, #footer ul {
 	margin-bottom:20px;
 	background:none;
 	border-bottom: 0;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 	line-height:30px;
 	color:#ffffff;
 	font-size:16px;

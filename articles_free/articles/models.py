@@ -41,4 +41,4 @@ class Article(models.Model):
         verbose_name_plural = 'Artigos'
         ordering = ['publication_date']
 
-    object = ArticleManager()
+    objects = ArticleManager()

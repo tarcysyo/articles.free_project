@@ -4,7 +4,7 @@ from articles_free.articles.models import Article
 # Create your views here.
 
 def index(request):
-    articles = Article.object.all()
+    articles = Article.objects.all()
     template_name = 'articles/index.html'
     context = {'articles': articles}
     return render(request, template_name, context)

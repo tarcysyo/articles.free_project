@@ -3,39 +3,63 @@
 {% block breadcrumb %}
 	<div class="breadcrumb">
 		<div>
-			<a href="{% url 'core:home' %}">Home</a><span>/</span><a href="#">Cadastrar</a>
+			<a href="{% url 'core:home' %}">Home</a><span>/</span><a href="#">Dashboard</a>
 		</div>
 	</div>
 {% endblock %}
 {% block content %}
-    <div class="container">
-        <h1 class="title text-center">Dashboard</h1>
-        <h2 class="fleft">Minhas Publicações</h2>
+    <div>
+        <h1 class="title text-center">Minhas Publicações</h1>
         <section>
-            <aside class="fright col-lg-2">
-                <fieldset class="fleft">
-                    <h4 class="fleft">Minhas Publicações</h4>
-                    <ul class="fleft">
-                        <li>Publicar</li>
-                        <li>Editar</li>
-                        <li>Excluir</li>
-                    </ul>
-                    <h4 class="fleft">Minha Conta</h4>
-                    <ul class="fleft">
-                        <li>Alterar dados</li>
-                        <li>Trocar senha</li>
-                    </ul>
-                </fieldset>
-            </aside>
-            {% for articler in articler %}
-            <div class="col-lg-10">
-                <h2 class="title"><a href="#">{{ articler.title }}</a></h2>
-                <footer class="categ">{{ articler.category }}</footer>
-                <hr class="title">
-                <p class="dash">{{ articler.abstract }}</p>
-                <footer class="title">Publicado em {{ articler.publication_date }}.</footer>
-            </div>
-            {% endfor %}
+            {% if articler %}
+                <aside class="fright col-lg-2">
+                    <fieldset class="fleft">
+                        <p class="nome">Olá, {{ user.first_name }}!</p>
+                        <h5 class="fleft">Minhas Publicações</h5>
+                        <ul class="fleft">
+                            <a href="{% url 'accounts:publication' %}"><li>Publicar</li></a>
+                            <li>Editar</li>
+                            <li>Excluir</li>
+                            <hr>
+                        </ul>
+                        <h5 class="fleft">Minha Conta</h5>
+                        <ul class="fleft">
+                            <a href="{% url 'accounts:edit' %}"><li>Alterar dados</li></a>
+                            <a href="{% url 'accounts:password' %}"><li>Trocar senha</li></a>
+                        </ul>
+                    </fieldset>
+                </aside>
+                {% for articler in articler %}
+                <div class="col-lg-10">
+                    <h2 class="title"><a href="{{ articler.get_absolute_url }}">{{ articler.title }}</a></h2>
+                    <footer class="categ">{{ articler.category }}</footer>
+                    <hr class="title">
+                    <p class="dash">{{ articler.abstract|truncatechars:'440' }}</p>
+                    <footer class="title">Publicado em {{ articler.publication_date }}.</footer>
+                    <hr class="title">
+                </div>
+                {% endfor %}
+            {% else %}
+                <aside class="fright col-lg-2">
+                    <fieldset class="fleft">
+                        <p class="nome">Olá, {{ user.first_name }}!</p>
+                        <h5 class="fleft">Minhas Publicações</h5>
+                        <ul class="fleft">
+                            <a href="{% url 'accounts:publication' %}"><li>Publicar</li></a>
+                            <hr>
+                        </ul>
+                        <h5 class="fleft">Minha Conta</h5>
+                        <ul class="fleft">
+                            <a href="{% url 'accounts:edit' %}"><li>Alterar dados</li></a>
+                            <a href="{% url 'accounts:password' %}"><li>Trocar senha</li></a>
+                        </ul>
+                    </fieldset>
+                </aside>
+                <div class="col-lg-10 text-center">
+                    <h2 class="text-center spc-t spc-b">Você não tem nenhuma publicação!</h2>
+                    <a href="{% url 'accounts:publication' %}" class="btn but spc-b">Publicar Agora!</a>
+                </div>
+            {% endif %}
         </section>
     </div>
 {% endblock %}

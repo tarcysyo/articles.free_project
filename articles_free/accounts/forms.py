@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth.models import User
 
 
@@ -25,3 +25,26 @@ class RegisterForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+class EditAccountForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name', 'last_name')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({'placeholder':'Username*'})
+        self.fields['email'].widget.attrs.update({'placeholder': 'Email*'})
+        self.fields['first_name'].widget.attrs.update({'placeholder': 'Nome*'})
+        self.fields['last_name'].widget.attrs.update({'placeholder': 'Sobrenome*'})
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        queryset = User.objects.filter(email=email).exclude(pk=self.instance.pk)
+        if queryset.exists():
+            raise forms.ValidationError('Já existe um usuário com este e-mail.')
+        return email
+
+class EditPasswordForm(PasswordChangeForm):
+    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Senha antiga*'}))
