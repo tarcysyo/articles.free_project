@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from articles_free.accounts.forms import RegisterForm, EditAccountForm, EditPasswordForm
-from articles_free.articles.forms import PublicationForm
+from articles_free.articles.forms import PublicationForm, EditPublicationForm
 from articles_free.articles.models import Article
 
 
@@ -32,7 +32,7 @@ def edit(request):
         if form.is_valid():
             form.save()
             context['form'] = form
-            return redirect('accounts:dashboard')
+            return redirect(settings.LOGIN_REDIRECT_URL)
     else:
         form = EditAccountForm(instance=request.user)
     context['form'] = form
@@ -91,8 +91,33 @@ def urlify(string):
     return string
 
 
-def detail(request, slug):
-    article = get_object_or_404(Article, slug=slug)
-    template_name = 'articles/detail.html'
-    context = {'article': article}
+@login_required
+def management(request):
+    articler = Article.objects.dashboard(request.user)
+    template_name = 'accounts/management.html'
+    context = {'articler': articler}
     return render(request, template_name, context)
+
+@login_required
+def delete_article(slug):
+    article_to_delete=Article.objects.get(slug=slug)
+    article_to_delete.delete()
+    return redirect('accounts:management')
+
+
+@login_required
+def republication(request):
+    if request.method == "POST":
+        form = EditPublicationForm(request.POST, request.FILES)
+        if form.is_valid():
+            pub = form.save(commit=False)
+            pub.author = request.user
+            pub.publication_date = datetime.now()
+            pub.slug = urlify(pub.title) + '-' + urlify(pub.abstract)
+            form.save()
+            return redirect('accounts:management')
+    else:
+        form = EditPublicationForm()
+    context = {'form': form}
+    template_name = 'articles/edit_publication.html'
+    return render(request, template_name, context )

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block breadcrumb %}
+	<div class="breadcrumb">
+		<div>
+			<a href="{% url 'core:home' %}">Home</a><span>/</span><a href="#">Dashboard</a>
+		</div>
+	</div>
+{% endblock %}
+{% block content %}
+    <div>
+        <h1 class="title text-center">Minhas Publicações</h1>
+        <section>
+                <aside class="fright col-lg-2">
+                    <fieldset class="fleft">
+                        <p class="nome">Olá, {{ user.first_name }}!</p>
+                        <h5 class="fleft">Minhas Publicações</h5>
+                        <ul class="fleft">
+                            <a href="{% url 'accounts:dashboard' %}"><li>Voltar para Dashboard</li></a>
+                            <hr>
+                        </ul>
+                    </fieldset>
+                </aside>
+                {% for articler in articler %}
+                <div class="col-lg-10">
+                    <h2 class="title"><a href="{{ articler.get_absolute_url }}">{{ articler.title }}</a></h2>
+                    <footer class="categ">{{ articler.category }}</footer>
+                    <hr class="title">
+                    <p class="dash">{{ articler.abstract|truncatechars:'440' }}</p>
+                    <footer class="title">Publicado em {{ articler.publication_date }}.</footer>
+                    <hr class="title">
+                    <a href="{% url 'accounts:republication' %}" class="btn but">Editar</a>
+                    <button type="submit" onclick="{{ delete_article.delete }}" class="btn but fright">Excluir</button>
+                </div>
+                {% endfor %}
+        </section>
+    </div>
+{% endblock %}

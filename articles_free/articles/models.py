@@ -20,6 +20,9 @@ class ArticleManager(models.Manager):
     def dashboard(self, query):
         return self.get_queryset().filter(author=query)
 
+    def get(self, query):
+        return self.get_queryset().filter(slug=query)
+
 
 class Article(models.Model):
     title = models.CharField('Título', max_length=255, blank=False, null=False)

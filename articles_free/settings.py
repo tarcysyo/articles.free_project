@@ -128,6 +128,7 @@ MEDIA_URL = '/media/'
 # E-mail
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 DEFAULT_FROM_EMAIL = 'articles_free@gmail.com'
 CONTACT_EMAIL = 'contato@articles_free.com.br'
 
