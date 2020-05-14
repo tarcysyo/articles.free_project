@@ -20,6 +20,10 @@
 			<hr class="article">
 			<a href="{{ articles.get_absolute_url }}" class="btn but">Ler</a>
 	</section>
+	{% empty %}
+	<section>
+		<h2 class="dashnihil">Descupe! Ainda não há publicações.</h2>
+	</section>
 {% endfor %}
 </div>
 {% endblock %}
