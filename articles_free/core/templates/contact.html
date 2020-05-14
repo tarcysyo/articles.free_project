@@ -20,6 +20,7 @@
 	                <form method="post">
 					{% csrf_token %}
 	                	<fieldset class="contact">
+							<center></center>
 							{% for field in form %}
 								{{ field }}
 							{% endfor %}

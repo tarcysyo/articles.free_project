@@ -9,16 +9,16 @@
 {% endblock %}
 {% block content %}					
 <div>
-	<h1 class="title text-center">Artigos</h1>
+	<h1>Artigos</h1>
 {% for articles in articles %}
 	<section>
-		<h2>{{ articles }}</h2>
-			<footer class="categ">{{ articles.category }}</footer>
-			<hr class="title">
-			<p>{{ articles.abstract|linebreaks }}</p>
+		<h2><a href="{{ articles.get_absolute_url }}">{{ articles }}</a></h2>
+			<footer class="category">{{ articles.category }}</footer>
+			<hr class="article">
+			<p>{{ articles.abstract|truncatechars:'1500' }}</p>
+			<footer class="date">Publicado por <em>{{ articles.author.first_name }} {{ articles.author.last_name }}</em>, em {{ articles.publication_date }}</footer>
+			<hr class="article">
 			<a href="{{ articles.get_absolute_url }}" class="btn but">Ler</a>
-			<footer class="title">Publicado por <em>{{ articles.author.first_name }} {{ articles.author.last_name }}</em>, em {{ articles.publication_date }}</footer>
-			<hr class="title">
 	</section>
 {% endfor %}
 </div>

@@ -31,7 +31,7 @@ class Article(models.Model):
     slug = models.SlugField('Atalho', unique=True, max_length=50)
     publication_date = models.DateField('Publicado em', auto_now_add=True)
     content = models.FileField('Artigo', upload_to='articles/files', blank=False, null=False)
-    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, related_name='articles', verbose_name="Categoria")
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, related_name='articles', verbose_name="Categoria", null=False, blank=False)
 
     def __str__(self):
         return self.title

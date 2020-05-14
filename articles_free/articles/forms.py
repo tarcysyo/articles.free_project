@@ -11,7 +11,7 @@ class PublicationForm(forms.ModelForm):
         self.fields['title'].widget.attrs.update({'placeholder':'Título do artigo*'})
         self.fields['abstract'].widget.attrs.update({'placeholder': 'Resumo ou abstract*'})
 
-class EditPublicationForm(PublicationForm):
-    class Meta:
-        model = Article
-        fields = ('title', 'category', 'abstract', 'content')
+# class EditPublicationForm(PublicationForm):
+#     class Meta:
+#         model = Article
+#         fields = ('title', 'category', 'abstract', 'content')
