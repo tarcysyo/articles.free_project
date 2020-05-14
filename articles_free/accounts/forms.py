@@ -48,5 +48,7 @@ class EditAccountForm(forms.ModelForm):
 
 class EditPasswordForm(PasswordChangeForm):
     old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Senha antiga*'}))
+    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Nova senha*'}))
+    new_password2 =  forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirmação de senha*'}))
 
 

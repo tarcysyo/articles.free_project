@@ -2,9 +2,9 @@ import re
 from datetime import datetime
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from articles_free.accounts.forms import RegisterForm, EditAccountForm, EditPasswordForm
-from articles_free.articles.forms import PublicationForm, EditPublicationForm
+from articles_free.articles.forms import PublicationForm
 from articles_free.articles.models import Article
 
 
@@ -82,6 +82,38 @@ def publication(request):
     return render(request, template_name, context)
 
 
+# @login_required
+# def management(request):
+#     articler = Article.objects.dashboard(request.user)
+#     template_name = 'accounts/management.html'
+#     context = {'articler': articler}
+#     return render(request, template_name, context)
+#
+# @login_required
+# def delete_article(slug):
+#     article_to_delete=Article.objects.get(slug=slug)
+#     article_to_delete.delete()
+#     return redirect('accounts:management')
+#
+#
+# @login_required
+# def republication(request):
+#     if request.method == "POST":
+#         form = EditPublicationForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             pub = form.save(commit=False)
+#             pub.author = request.user
+#             pub.publication_date = datetime.now()
+#             pub.slug = urlify(pub.title) + '-' + urlify(pub.abstract)
+#             form.save()
+#             return redirect('accounts:management')
+#     else:
+#         form = EditPublicationForm()
+#     context = {'form': form}
+#     template_name = 'articles/edit_publication.html'
+#     return render(request, template_name, context )
+
+
 def urlify(string):
     string = string.lower().strip()  # remove leading, trailing whitespace
     string = string.replace("&", "and")
@@ -89,35 +121,3 @@ def urlify(string):
     string = re.sub("\W+", "-", string)  # replace whitespace with "-"
     string = re.sub("-{2,}", "-", string)  # remove double dahses
     return string
-
-
-@login_required
-def management(request):
-    articler = Article.objects.dashboard(request.user)
-    template_name = 'accounts/management.html'
-    context = {'articler': articler}
-    return render(request, template_name, context)
-
-@login_required
-def delete_article(slug):
-    article_to_delete=Article.objects.get(slug=slug)
-    article_to_delete.delete()
-    return redirect('accounts:management')
-
-
-@login_required
-def republication(request):
-    if request.method == "POST":
-        form = EditPublicationForm(request.POST, request.FILES)
-        if form.is_valid():
-            pub = form.save(commit=False)
-            pub.author = request.user
-            pub.publication_date = datetime.now()
-            pub.slug = urlify(pub.title) + '-' + urlify(pub.abstract)
-            form.save()
-            return redirect('accounts:management')
-    else:
-        form = EditPublicationForm()
-    context = {'form': form}
-    template_name = 'articles/edit_publication.html'
-    return render(request, template_name, context )

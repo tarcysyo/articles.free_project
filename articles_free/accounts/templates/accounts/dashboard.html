@@ -9,57 +9,59 @@
 {% endblock %}
 {% block content %}
     <div>
-        <h1 class="title text-center">Minhas Publicações</h1>
-        <section>
+        <h1>Minhas Publicações</h1>
             {% if articler %}
                 <aside class="fright col-lg-2">
-                    <fieldset class="fleft">
+                    <fieldset>
                         <p class="nome">Olá, {{ user.first_name }}!</p>
-                        <h5 class="fleft">Minhas Publicações</h5>
-                        <ul class="fleft">
-                            <a href="{% url 'accounts:publication' %}"><li>Publicar</li></a>
-                            <a href="{% url 'accounts:management' %}"><li>Gerenciar</li></a>
-                            <li>Excluir</li>
+                        <h6 class="fleft">Minhas Publicações</h6>
+                        <ul>
+                            <li><a href="{% url 'accounts:publication' %}">Publicar</a></li>
+                            <li><a href="#">Gerenciar</a></li>
                             <hr>
                         </ul>
-                        <h5 class="fleft">Minha Conta</h5>
-                        <ul class="fleft">
-                            <a href="{% url 'accounts:edit' %}"><li>Alterar dados</li></a>
-                            <a href="{% url 'accounts:password' %}"><li>Trocar senha</li></a>
+                        <h6 class="fleft">Minha Conta</h6>
+                        <ul>
+                           <li> <a href="{% url 'accounts:edit' %}">Alterar dados</a></li>
+                            <li><a href="{% url 'accounts:password' %}">Trocar senha</a></li>
                         </ul>
                     </fieldset>
                 </aside>
                 {% for articler in articler %}
-                <div class="col-lg-10">
-                    <h2 class="title"><a href="{{ articler.get_absolute_url }}">{{ articler.title }}</a></h2>
-                    <footer class="categ">{{ articler.category }}</footer>
-                    <hr class="title">
-                    <p class="dash">{{ articler.abstract|truncatechars:'440' }}</p>
-                    <footer class="title">Publicado em {{ articler.publication_date }}.</footer>
-                    <hr class="title">
-                </div>
+                <section class="col-lg-10">
+                    <div>
+                        <h2><a href="{{ articler.get_absolute_url }}">{{ articler.title }}</a></h2>
+                        <footer class="category">{{ articler.category }}</footer>
+                        <hr class="article">
+                        <p>{{ articler.abstract|truncatechars:'500' }}</p>
+                        <footer class="date">Publicado em {{ articler.publication_date }}.</footer>
+                        <br>
+                        <hr class="article">
+                    </div>
+                </section>
                 {% endfor %}
             {% else %}
                 <aside class="fright col-lg-2">
-                    <fieldset class="fleft">
+                    <fieldset>
                         <p class="nome">Olá, {{ user.first_name }}!</p>
-                        <h5 class="fleft">Minhas Publicações</h5>
-                        <ul class="fleft">
-                            <a href="{% url 'accounts:publication' %}"><li>Publicar</li></a>
-                            <hr>
+                        <h6 class="fleft">Minhas Publicações</h6>
+                        <ul>
+                            <li><a href="{% url 'accounts:publication' %}">Publicar</a></li>
                         </ul>
-                        <h5 class="fleft">Minha Conta</h5>
-                        <ul class="fleft">
-                            <a href="{% url 'accounts:edit' %}"><li>Alterar dados</li></a>
-                            <a href="{% url 'accounts:password' %}"><li>Trocar senha</li></a>
+                        <hr>
+                        <h6 class="fleft">Minha Conta</h6>
+                        <ul>
+                            <li><a href="{% url 'accounts:edit' %}">Alterar dados</a></li>
+                            <li><a href="{% url 'accounts:password' %}">Trocar senha</a></li>
                         </ul>
                     </fieldset>
                 </aside>
-                <div class="col-lg-10 text-center">
-                    <h2 class="text-center spc-t spc-b">Você não tem nenhuma publicação!</h2>
-                    <a href="{% url 'accounts:publication' %}" class="btn but spc-b">Publicar Agora!</a>
-                </div>
+                <section class="col-lg-10 dashnihil">
+                    <div>
+                        <h2 class="dashnihil">Você não tem nenhuma publicação!</h2>
+                        <a href="{% url 'accounts:publication' %}" class="btn but dashnihil">Publicar Agora!</a>
+                    </div>
+                </section>
             {% endif %}
-        </section>
     </div>
 {% endblock %}

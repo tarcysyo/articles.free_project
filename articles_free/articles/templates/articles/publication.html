@@ -8,11 +8,10 @@
     </div>
 {% endblock %}
 {% block content %}
-    <div class="container">
-        <h1 class="title text-center">Publicar</h1>
+    <div>
+        <h1>Publicar</h1>
         <section>
-            <div class="container">
-            <h2 class="title">Dados do artigo</h2>
+            <h2>Dados do artigo</h2>
             <div>
                 <div>
                     <form method="post" enctype="multipart/form-data">
@@ -23,12 +22,11 @@
                             {{ field }}
                             {{ field.errors }}
                             {% endfor %}
-                            <button type="submit" class="btn but fright">Publicar</button>
+                            <button type="submit" class="btn but">Publicar</button>
                         </fieldset>
                     </form>
                 </div>
             </div>
-        </div>
         </section>
     </div>
 {% endblock %}
