@@ -1,7 +1,78 @@
+h1 {
+    text-align: center !important;
+    position:relative;
+	line-height:31px;
+	color:#000000;
+	padding: 20px
+    font-family: 'Muli', sans-serif;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+h1.home {
+	padding-top: 20px;
+	font-size: 70px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+h2 {
+    position:relative;
+	padding: 0 0 10px 0;
+	line-height:31px;
+	font-size:25px;
+	color:#000000;
+    margin-left: 10px;
+	background:url(../images/line.jpg) left bottom no-repeat;
+    text-align: left
+}
+
+h2 a {
+	color:#000000;
+	font-family: 'Muli', sans-serif;
+	font-weight:900;
+}
+h2 a:hover {
+	color: #aaaaaa;
+	text-decoration:none;
+}
+
+
+section {
+    background-color: #eeeeee;
+    padding: 15px;
+    padding-bottom: 12px;
+    margin: 5px;
+    text-align: center !important;
+}
+
+section.dashnihil {
+    padding-bottom: 95px;
+}
+
+
+h2.dashnihil {
+    background:none;
+    text-align: center;
+}
+
+a.dashnihil {
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
 p {
 	position: relative;
 	text-align: justify;
-	text-indent: 30px;
+	text-indent: 50px;
+    margin: 10px;
 }
 
 p.nome {
@@ -9,17 +80,45 @@ p.nome {
 	text-indent: 0px;
 }
 
-footer.title {
-	float: right;
+p.home {
+	text-align: center;
+	font-size: 25px;
+	padding-top: 10px;
+    text-indent: 0px;
+}
+p.last {
+	text-align: center;
+	font-size: 25px;
+	padding-top: 20px;
+    padding-bottom: 40px;
+    text-indent: 0px;
+}
+
+hr {
+	border: 0.5px solid #aaaaaa;
+}
+
+hr.article {
+	border: 0.1px solid #eeeeee;
+}
+
+footer.category {
+    float: right;
 	font-size: 8px;
-	padding-bottom: 5px;
+    margin-right: 10px;
+}
+
+footer.date {
+	float: right;
+    font-size: 8px;
+    margin-right: 10px;	
 	background:url(../images/line.jpg) right bottom no-repeat;
 }
 
 footer.detail {
 	float: right;
-	font-size: 8px;
-	padding-bottom: 5px;	
+    font-size: 8px;
+    margin-right: 10px;	
 }
 
 iframe {
@@ -28,32 +127,15 @@ iframe {
 	border: none;
 }
 
-footer.categ {
-	font-size: 8px;
-	padding-bottom: 5px;
-	float: right;
-}
-
-h1.title {
-	position:relative;
-	/*text-transform:uppercase;*/
-	line-height:31px;
-	color:#000000;
-	padding: 10px 50px 0 50px;
-}
-
-.spc-b {
-	margin-bottom: 70px;
-}
-
-.spc-t {
-	margin-top: 50px;
+span.home {
+	color: #aaaaaa;
 }
 
 .but {
-	width: 120px;
+	width: 150px;
 	background: #000000;
 	color: #ffffff;
+    font-weight: 900;
 }
 
 .but:hover {
@@ -70,113 +152,178 @@ fieldset {
 
 fieldset input {
 	margin: 10px;
-	width: 31%;
 }
 
-fieldset textarea {
-	display: grid;
-	margin: 10px;
+fieldset textarea{
+    margin: 10px;
+}
+
+fieldset button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact input {
+    width: 31%;
+}
+
+.contact textarea {
+    display: grid;
+    margin: 10px;
 	width: 97.8%;
-	height: 100px;
+	height: 100px; 
 }
 
-h1.home {
-	padding-top: 20px;
-	font-family: "DauphinPlain";
-	font-size: 70px;
-}
-
-h2.home {
-	padding-top: 20px;
-}
-
-span.home {
-	color: #777777;
-}
-
-hr {
-	border: 0.5px solid #aaaaaa;
-}
-
-hr.title {
-	border: 0.1px solid #ffffff;
-}
-
-p.home {
-	position: relative;
-	text-align: center;
-	font-size: 25px;
-	padding-top: 20px;
-}
-
-fieldset.login {
-	display: block;
-	padding: 10px;
-	border: 5px solid black;
-	margin-right: 150px;
-	margin-left: 150px;
-	margin-top: 20px;
-	margin-bottom: 50px;
+.login {
+    width: 50%;
+    margin: 0px auto;
 }
 
 .login input {
-	margin: 15px;
-	width: 35%;
+	width: 45%;
 }
 
-.login button {
-	margin: 10px;
+.register #id_username {
+    width: 31%;
 }
 
-fieldset.register {
-	display: block;
-	padding: 10px;
-	border: 5px solid black;
-	margin-right: 150px;
-	margin-left: 150px;
-	margin-top: 20px;
-	margin-bottom: 50px;
-}
-.register input {
-	margin: 5px;
-	width: 20%;
+.register #id_password1 {
+    width: 31%;
 }
 
-#id_username {
-	width: 44%;
+.register #id_password2 {
+    width: 31%;
 }
 
-#id_password1 {
-	width: 25%;
+.register #id_first_name {
+    width: 41%;
 }
 
-#id_password2 {
-	width: 25%;
+.register #id_last_name {
+    width: 54.4%;
 }
 
-#id_first_name {
-	width: 30%;
+.register #id_email {
+    width: 97.8%;
 }
 
-#id_last_name {
-	width: 66%;
+.edit {
+    width: 80%;
+    margin: 0px auto;
 }
 
-#id_email {
-	width: 78%;
+.edit #id_username {
+    width: 31%;
 }
 
-.register button {
-	margin: 10px;
+.edit #id_email {
+    width: 63%
 }
 
-#id_category {
+.edit #id_first_name {
     width: 40%;
 }
 
-#id_title {
-    width: 61%;
+.edit #id_last_name {
+    width: 53.8%;
 }
-#id_category {
-    width: 35%;
+
+.password {
+    width: 70%;
+    margin: 0px auto;
 }
+
+.password input {
+    width: 25%;
+}
+
+.publication input {
+    width: 31%;
+}
+
+.publication textarea {
+    display: grid;
+    margin: 10px;
+	width: 97.8%;
+	height: 100px; 
+}
+
+.publication #id_title {
+    width: 97.8%;
+}
+
+.publication #id_category {
+    width: 31%;
+    
+}
+
+.publication #id_content {
+    width: 64.5%;
+}
+
+aside a:hover, a:focus {
+	text-decoration:none;
+	color:#aaaaaa;
+}
+
+aside a {
+	text-decoration:none;
+	color:#000000;
+}
+
+aside ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+aside fieldset {
+    width: 165px;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

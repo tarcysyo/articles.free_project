@@ -10,6 +10,6 @@ urlpatterns = [
     re_path(r'^sair/$', auth_views.LogoutView.as_view(next_page='core:home'), name='logout', ),
     re_path(r'^painel/$', views.dashboard, name='dashboard', ),
     re_path(r'^publicar/$', views.publication, name='publication', ),
-    re_path(r'^gerenciar/$', views.management, name='management', ),
-    re_path(r'^editar-artigo/$', views.republication, name='republication', ),
+    # re_path(r'^gerenciar/$', views.management, name='management', ),
+    # re_path(r'^editar-artigo/$', views.republication, name='republication', ),
 ]

@@ -11,9 +11,9 @@
 	<div>
 		<h1 class="title text-center">Leitura</h1>
 		<section>
-			<h2 class="title">{{ article }}</h2>
-			<footer class="categ"><strong>{{ article.category }}</strong></footer>
-			<hr class="title">
+			<h2><a href="{% url 'articles:index' %}">{{ article }}</a></h2>
+			<footer class="category"><strong>{{ article.category }}</strong></footer>
+			<hr class="article">
 			<footer class="detail">Publicado por <em>{{ article.author.first_name }} {{ article.author.last_name }}</em>, em {{ article.publication_date}}</footer>
 			<iframe src= "{{ article.content.url }}" type='application/pdf'></iframe>
 		</section>
