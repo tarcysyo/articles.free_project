@@ -8,11 +8,10 @@
 	</div>
 {% endblock %}
 {% block content %}					
-	<div class="container">
-		<h1 class="title text-center">Contato</h1>
+	<div>
+		<h1>Contato</h1>
 		<section>
-			<div class="container">
-	    	<h2 class="title">Fale conosco</h2>
+	    	<h2>Fale conosco</h2>
 				{% if is_valid %}
 				<p class="text-center">Sua mensagem foi enviada com sucesso!</p>
 				{% endif %}
@@ -20,7 +19,7 @@
 	            <div>
 	                <form method="post">
 					{% csrf_token %}
-	                	<fieldset>
+	                	<fieldset class="contact">
 							{% for field in form %}
 								{{ field }}
 							{% endfor %}
@@ -31,7 +30,6 @@
 	                </form>
 	            </div>
 	        </div>
-	    </div>
 		</section>
 	</div>
 {% endblock %}

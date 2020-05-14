@@ -1,5 +1,4 @@
 from django import forms
-
 from articles_free.articles.models import Article
 
 class PublicationForm(forms.ModelForm):

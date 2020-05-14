@@ -12,13 +12,13 @@
 	<h1 class="title text-center">Artigos</h1>
 {% for articles in articles %}
 	<section>
-		<h2 class="title">{{ articles }}</h2>
-		<footer class="categ">{{ articles.category }}</footer>
-		<hr class="title">
-		<p>{{ articles.abstract|linebreaks }}</p>
-		<a href="{{ articles.get_absolute_url }}" class="btn but">Ler</a>
-		<footer class="title">Publicado por <em>{{ articles.author.first_name }} {{ articles.author.last_name }}</em>, em {{ articles.publication_date }}</footer>
-		<hr>
+		<h2>{{ articles }}</h2>
+			<footer class="categ">{{ articles.category }}</footer>
+			<hr class="title">
+			<p>{{ articles.abstract|linebreaks }}</p>
+			<a href="{{ articles.get_absolute_url }}" class="btn but">Ler</a>
+			<footer class="title">Publicado por <em>{{ articles.author.first_name }} {{ articles.author.last_name }}</em>, em {{ articles.publication_date }}</footer>
+			<hr class="title">
 	</section>
 {% endfor %}
 </div>
